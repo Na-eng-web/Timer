@@ -25,6 +25,7 @@ function pad(n) {
 function setValue(el, text) {
   if (el.textContent === text) return;
   el.textContent = text;
+  if (!("ready" in el.dataset)) return;
   el.classList.remove("flip");
   void el.offsetWidth; // force reflow so the animation restarts
   el.classList.add("flip");
@@ -60,8 +61,7 @@ function tick() {
   if (diff <= 0) {
     countdownEl.innerHTML = '<div class="finished">The moment has arrived.</div>';
     summaryEl.textContent = "";
-    clearInterval(timer);
-    return;
+    return false;
   }
 
   const { months, days, hours, minutes, seconds } = breakdown(now, targetDate);
@@ -77,11 +77,19 @@ function tick() {
   summaryEl.innerHTML =
     `<strong>${totalDays.toLocaleString()}</strong> days left &middot; ` +
     `<strong>${totalSeconds.toLocaleString()}</strong> seconds left`;
+  return true;
 }
 
-let timer;
-tick();
-if (targetDate > new Date()) timer = setInterval(tick, 1000);
+// Schedule each update right on the next whole second of the real clock,
+// so the seconds tick evenly instead of drifting like setInterval does.
+function scheduleNext() {
+  setTimeout(() => { if (tick()) scheduleNext(); }, 1000 - (Date.now() % 1000) + 5);
+}
+
+// Fill the tiles once without the flip animation, then start ticking.
+const running = tick();
+document.querySelectorAll(".unit .value").forEach((el) => (el.dataset.ready = ""));
+if (running) scheduleNext();
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
