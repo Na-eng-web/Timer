@@ -6,7 +6,7 @@ const targetLabel = document.getElementById("targetLabel");
 targetLabel.textContent = "Until " + targetDate.toLocaleString(undefined, {
   weekday: "long", year: "numeric", month: "long", day: "numeric",
   hour: "numeric", minute: "2-digit",
-  timeZone: "Asia/Kolkata", timeZoneName: "short"
+  timeZone: "Asia/Kolkata"
 });
 
 const countdownEl = document.getElementById("countdown");
@@ -92,20 +92,6 @@ document.querySelectorAll(".unit .value").forEach((el) => (el.dataset.ready = ""
 if (running) scheduleNext();
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-// Tilt the 3D countdown toward the pointer (desktop / mouse only).
-if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
-  let frame = 0;
-  window.addEventListener("pointermove", (e) => {
-    cancelAnimationFrame(frame);
-    frame = requestAnimationFrame(() => {
-      const x = e.clientX / window.innerWidth - 0.5;
-      const y = e.clientY / window.innerHeight - 0.5;
-      countdownEl.style.setProperty("--tilt-y", (x * 18).toFixed(2) + "deg");
-      countdownEl.style.setProperty("--tilt-x", (10 - y * 14).toFixed(2) + "deg");
-    });
-  });
-}
 
 // Falling rose petals in the background.
 if (!reduceMotion) {
