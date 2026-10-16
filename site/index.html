@@ -1,52 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nakul & Geeta</title>
-<meta name="description" content="Counting down to the wedding of Nakul & Geeta — 21 February 2027.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>नरेंद्र आणि गीता — शुभ विवाह</title>
+<meta name="description" content="चि. नरेंद्र आणि चि. सौ. कां. गीता यांचा शुभ विवाह — रविवार, २१ फेब्रुवारी २०२७, दुपारी १२:३१, रेणुका मंगल कार्यालय, परभणी.">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Nakul & Geeta — Wedding Countdown">
-<meta property="og:description" content="Counting down to 21 February 2027, 12:31 PM.">
+<meta property="og:title" content="॥ शुभ विवाह ॥ नरेंद्र आणि गीता">
+<meta property="og:description" content="रविवार, २१ फेब्रुवारी २०२७ • दुपारी १२:३१ • रेणुका मंगल कार्यालय, परभणी">
 <meta property="og:url" content="https://na-eng-web.github.io/Timer/">
 <meta name="twitter:card" content="summary">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=block">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Noto+Serif+Devanagari:wght@500;600;700&amp;family=Noto+Sans+Devanagari:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=block" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="tailwind.config.js"></script>
+<link href="style.css" rel="stylesheet">
 </head>
-<body>
+<body class="font-body-md text-on-surface antialiased pt-safe pb-safe flex flex-col min-h-screen">
+<!-- Phone-width card; on wider screens it sits centred on a muted backdrop. -->
+<main class="flex-1 flex flex-col relative w-full max-w-md mx-auto bg-surface shadow-2xl">
+<div class="flex flex-col w-full text-on-surface pb-10">
 
-  <div class="intro" aria-hidden="true"></div>
-  <div class="petals" id="petals" aria-hidden="true"></div>
+  <!-- Auspicious festive header banner -->
+  <div class="relative w-full overflow-hidden bg-primary px-4 pt-6 pb-8 text-center text-on-primary shadow-xl">
+    <!-- Subtle toran ribbon pattern -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none flex justify-center" aria-hidden="true">
+      <svg class="w-full h-full" fill="none" viewBox="0 0 400 120">
+        <path d="M0 0 Q 50 40 100 0 Q 150 40 200 0 Q 250 40 300 0 Q 350 40 400 0" fill="none" stroke="currentColor" stroke-width="2"></path>
+        <circle cx="50" cy="22" fill="currentColor" r="6"></circle>
+        <circle cx="150" cy="22" fill="currentColor" r="6"></circle>
+        <circle cx="250" cy="22" fill="currentColor" r="6"></circle>
+        <circle cx="350" cy="22" fill="currentColor" r="6"></circle>
+      </svg>
+    </div>
 
-  <div class="wrap">
-    <div class="eyebrow">Wedding Countdown</div>
-    <h1>Nakul <span class="amp">&amp;</span> Geeta</h1>
-    <div class="ornament" aria-hidden="true">❦</div>
-    <div class="target-date" id="targetLabel"></div>
+    <!-- Invocation pill -->
+    <div class="relative inline-flex items-center gap-1.5 px-3 py-1 bg-surface/10 rounded-full text-secondary-fixed mb-4 shadow-sm">
+      <span class="material-symbols-outlined text-[14px]" aria-hidden="true">local_florist</span>
+      <span class="font-label-md text-label-md tracking-wider">॥ श्री गणेशाय नमः ॥</span>
+      <span class="material-symbols-outlined text-[14px]" aria-hidden="true">local_florist</span>
+    </div>
 
-    <div class="stage">
-      <div class="countdown" id="countdown">
-        <div class="unit"><div class="value" id="months">00</div><div class="label">Months</div></div>
-        <div class="sep" aria-hidden="true"></div>
-        <div class="unit"><div class="value" id="days">00</div><div class="label">Days</div></div>
-        <div class="sep" aria-hidden="true"></div>
-        <div class="unit"><div class="value" id="hours">00</div><div class="label">Hours</div></div>
-        <div class="sep" aria-hidden="true"></div>
-        <div class="unit"><div class="value" id="minutes">00</div><div class="label">Minutes</div></div>
-        <div class="sep" aria-hidden="true"></div>
-        <div class="unit"><div class="value" id="seconds">00</div><div class="label">Seconds</div></div>
+    <!-- Ganesha seal -->
+    <div class="relative flex justify-center items-center my-2">
+      <div class="relative w-20 h-20 rounded-full flex items-center justify-center shadow-2xl">
+        <img src="ganesha.png" width="400" height="400" alt="श्री गणेशाय नमः" class="w-full h-full object-cover rounded-full drop-shadow-md">
       </div>
     </div>
 
-    <div class="summary" id="summary"></div>
+    <p class="text-secondary-fixed font-label-md text-label-md tracking-widest uppercase mt-2">॥ शुभ विवाह संस्कार ॥</p>
+
+    <!-- Couple names -->
+    <div class="flex flex-col items-center justify-center mt-1 drop-shadow-md text-on-primary">
+      <h1 class="font-headline-xl-mobile text-headline-xl-mobile font-semibold tracking-normal">चि. नरेंद्र</h1>
+      <div class="flex items-center justify-center gap-2 my-1 text-secondary-fixed opacity-90">
+        <span class="w-8 h-[1px] bg-secondary-fixed"></span>
+        <span class="font-label-md text-label-md tracking-widest">आणि</span>
+        <span class="w-8 h-[1px] bg-secondary-fixed"></span>
+      </div>
+      <div class="font-headline-xl-mobile text-headline-xl-mobile font-semibold tracking-normal">चि. सौ. कां. गीता</div>
+    </div>
+
+    <p class="font-body-sm text-body-sm text-primary-fixed max-w-xs mx-auto mt-2 italic px-2">
+      “सप्तपदीच्या सात फेऱ्यांनी बांधली जाणारी जन्मांतराची पवित्र गाठ... दोन मनांचे आणि दोन कुळांचे शुभ मिलन!”
+    </p>
+
+    <!-- Date & muhurat badges -->
+    <div class="flex flex-wrap items-center justify-center gap-2 mt-4">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-lowest/15 backdrop-blur-sm rounded-full text-surface text-label-sm font-label-sm shadow-sm"><span class="material-symbols-outlined text-[15px] text-secondary-fixed" aria-hidden="true">calendar_today</span> रविवार, २१ फेब्रुवारी २०२७</span>
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary text-on-secondary rounded-full text-label-sm font-label-sm shadow-sm">
+        <span class="material-symbols-outlined text-[15px]" aria-hidden="true">wb_twilight</span>
+        दुपारी १२:३१ वाजता • विजय मुहूर्त
+      </span>
+    </div>
   </div>
 
-<script src="script.js"></script>
+  <!-- Main body -->
+  <div class="px-4 -mt-4 relative z-10 flex flex-col gap-4">
 
+    <!-- Countdown card -->
+    <div class="w-full bg-surface-container-lowest rounded-xl p-5 shadow-xl text-center relative overflow-hidden">
+      <div class="flex items-center justify-center gap-2 mb-4">
+        <span class="material-symbols-outlined text-secondary text-[18px]" aria-hidden="true">flare</span>
+        <h2 class="font-headline-sm text-headline-sm text-primary font-semibold">॥ शुभ मुहूर्त घटिका ॥</h2>
+        <span class="material-symbols-outlined text-secondary text-[18px]" aria-hidden="true">flare</span>
+      </div>
+
+      <div class="grid grid-cols-4 gap-2.5">
+        <div class="flex flex-col items-center">
+          <div class="w-full aspect-square bg-gradient-to-b from-surface-container to-surface-container-high rounded-lg shadow-md flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-x-0 top-0 h-1/2 bg-white/40 pointer-events-none"></div>
+            <span class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold tracking-tight" id="count-days">00</span>
+          </div>
+          <span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-bold">दिवस</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-full aspect-square bg-gradient-to-b from-surface-container to-surface-container-high rounded-lg shadow-md flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-x-0 top-0 h-1/2 bg-white/40 pointer-events-none"></div>
+            <span class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold tracking-tight" id="count-hours">00</span>
+          </div>
+          <span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-bold">तास</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-full aspect-square bg-gradient-to-b from-surface-container to-surface-container-high rounded-lg shadow-md flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-x-0 top-0 h-1/2 bg-white/40 pointer-events-none"></div>
+            <span class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold tracking-tight" id="count-mins">00</span>
+          </div>
+          <span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-bold">मिनिटे</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-full aspect-square bg-gradient-to-b from-primary-container to-primary rounded-lg shadow-md flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-x-0 top-0 h-1/2 bg-white/20 pointer-events-none"></div>
+            <span class="font-headline-lg-mobile text-headline-lg-mobile text-on-primary font-bold tracking-tight" id="count-secs">00</span>
+          </div>
+          <span class="font-label-sm text-label-sm text-primary mt-1.5 font-bold">सेकंद</span>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-3 flex items-center justify-center gap-2 text-on-surface-variant text-label-sm font-label-sm">
+        <span class="material-symbols-outlined text-[16px] text-secondary" aria-hidden="true">hourglass_top</span>
+        <span id="count-note">लग्नघटिका समीप येत आहे...</span>
+      </div>
+    </div>
+
+    <!-- Venue card -->
+    <div class="bg-surface-container-lowest rounded-xl p-4 shadow-md flex items-center justify-between gap-3">
+      <div class="flex items-start gap-3">
+        <div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0 mt-0.5">
+          <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">location_on</span>
+        </div>
+        <div>
+          <span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">स्थळ (VENUE)</span>
+          <h3 class="font-headline-sm text-headline-sm text-primary font-bold mt-0.5">रेणुका मंगल कार्यालय, परभणी</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">पाथरी रोड, परभणी, महाराष्ट्र - ४३१४०१</p>
+        </div>
+      </div>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Renuka+Mangal+Karyalay+Pathri+Road+Parbhani" target="_blank" rel="noopener"
+         class="px-3 py-2 bg-surface-container rounded-lg text-primary font-label-sm text-label-sm flex items-center gap-1 active:bg-surface-variant shadow-sm shrink-0">
+        मार्ग ↗
+      </a>
+    </div>
+
+    <!-- Add to calendar (12:31–14:31 IST = 07:01–09:01 UTC) -->
+    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%E0%A4%B6%E0%A5%81%E0%A4%AD%20%E0%A4%B5%E0%A4%BF%E0%A4%B5%E0%A4%BE%E0%A4%B9%20%E2%80%94%20%E0%A4%A8%E0%A4%B0%E0%A5%87%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%20%E0%A4%86%E0%A4%A3%E0%A4%BF%20%E0%A4%97%E0%A5%80%E0%A4%A4%E0%A4%BE&amp;dates=20270221T070100Z/20270221T090100Z&amp;location=Renuka%20Mangal%20Karyalay%2C%20Pathri%20Road%2C%20Parbhani%2C%20Maharashtra%20431401" target="_blank" rel="noopener"
+       class="mt-1 w-full py-3 px-4 bg-surface-container-high text-primary rounded-xl font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 active:bg-surface-container-highest transition-colors">
+      <span class="material-symbols-outlined text-[20px]" aria-hidden="true">event</span>
+      कॅलेंडरमध्ये नोंदवा (Add to Calendar)
+    </a>
+
+    <!-- Blessings footer -->
+    <div class="text-center py-4 flex flex-col items-center gap-1 text-on-surface-variant">
+      <div class="flex items-center gap-2">
+        <span class="w-8 h-[1px] bg-outline-variant"></span>
+        <span class="material-symbols-outlined text-secondary text-[16px]" aria-hidden="true">favorite</span>
+        <span class="w-8 h-[1px] bg-outline-variant"></span>
+      </div>
+      <p class="font-body-sm text-body-sm mt-1">निमंत्रक: समस्त सोनवटकर आणि पाथरीकर परिवार</p>
+      <p class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">॥ सहकुटुंब सहपरिवार निमंत्रित ॥</p>
+    </div>
+  </div>
+</div>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
